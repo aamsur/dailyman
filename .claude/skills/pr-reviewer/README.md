@@ -1,14 +1,14 @@
 ---
 skill: pr-reviewer
-description: Review multiple related Git pull requests for a single task
+description: Comprehensive multi-PR review tool that provides a helicopter view of your team's work
 tags: [git, pr, review, management]
 ---
 
-# PR Reviewer Skill
+# 🔍 PR Reviewer Skill
 
-Reviews multiple related pull requests that belong to a single task or feature.
+Comprehensive multi-PR review tool that provides a helicopter view of your team's work. Designed for IT Managers and Tech Leads who need to review multiple PRs from different repositories and understand the big picture of how changes interconnect.
 
-## Usage
+## Quick Start
 
 ```bash
 # Review single PR
@@ -16,17 +16,23 @@ pr-reviewer https://github.com/org/repo/pull/123
 
 # Review multiple related PRs (use pipe separator)
 pr-reviewer https://github.com/org/repo/pull/123|https://github.com/org/repo/pull/124
-
-# Review with specific focus
-pr-reviewer --focus security https://github.com/org/repo/pull/123
-
-# Review with custom context
-pr-reviewer --context "Feature: User Authentication" https://github.com/org/repo/pull/123
 ```
 
-## Arguments
+## Documentation
 
-- `pr_urls`: One or more PR URLs separated by pipe `|` (GitHub, GitLab, Bitbucket supported)
+For detailed documentation, see:
+- [User Guide](GUIDE.md) - Complete usage instructions, review criteria, and examples
+- [Configuration](CONFIGURATION.md) - Setup and customization options
+
+## Quick Reference
+
+### Basic Usage
+- Single PR: `pr-reviewer <url>`
+- Multiple PRs: `pr-reviewer <url1>|<url2>|<url3>`
+- With options: `pr-reviewer --focus security --context "Auth Feature" <urls>`
+
+### Arguments
+- `pr_urls`: One or more PR URLs separated by `|`
 - `--focus`: Focus area (security, performance, architecture, testing, documentation)
 - `--context`: Additional context about the task or feature
 - `--output`: Output format (markdown, json, summary)
