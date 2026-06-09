@@ -1,0 +1,34 @@
+{
+  "defaultFocus": ["security", "testing", "architecture"],
+  "autoFetchRelated": true,
+  "requireTests": true,
+  "securityRules": {
+    "blockSecretsInCode": true,
+    "requireInputValidation": true,
+    "checkDependencyVulnerabilities": true,
+    "checkAuthenticationPatterns": true,
+    "checkAuthorizationPatterns": true
+  },
+  "reviewTemplate": "standard",
+  "outputFormat": "markdown",
+  "severityLevels": {
+    "critical": "Security vulnerabilities, data loss risks",
+    "high": "Bugs, performance issues, architectural problems",
+    "medium": "Code quality, maintainability concerns",
+    "low": "Style issues, minor improvements"
+  },
+  "integrations": {
+    "github": {
+      "autoComment": false,
+      "labelOnIssues": true,
+      "requireApprovalFor": ["critical", "high"]
+    },
+    "gitlab": {
+      "autoComment": false,
+      "labelOnIssues": true
+    }
+  },
+  "maxPRs": 10,
+  "maxDiffLines": 5000,
+  "enableCrossRepoReview": true
+}

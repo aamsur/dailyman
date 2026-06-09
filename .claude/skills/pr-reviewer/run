@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+# PR Reviewer Skill Entry Point for Claude Code
+# This script is invoked when user types: /pr-reviewer <args>
+
+set -euo pipefail
+
+SKILL_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+MAIN_SCRIPT="${SKILL_DIR}/pr-reviewer.sh"
+
+# Pass all arguments to the main script
+exec "$MAIN_SCRIPT" "$@"
